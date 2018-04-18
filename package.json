@@ -1,0 +1,16 @@
+{
+  "name": "nodered-ocp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "flow_mbp.g.a.net.json",
+  "scripts": {
+    "start": "node-red --settings settings.js flows_mbp.g.a.net.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["openshift", "kubernetes", "mqtt"],
+  "author": "gautric@redhat.com",
+  "license": "ISC",
+  "dependencies": {
+    "node-red": "^0.18.4"
+  }
+}
