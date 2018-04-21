@@ -12,7 +12,6 @@
   "license": "Apache v2",
   "dependencies": {
     "node-red": "^0.18.4",
-    "node-red-contrib-amqp": "^0.4.5",
     "node-red-dashboard": "^2.9.0"
   }
 }
