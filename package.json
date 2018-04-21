@@ -7,14 +7,12 @@
     "start": "node-red --settings settings.js flows_mbp.g.a.net.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "openshift",
-    "kubernetes",
-    "mqtt"
-  ],
+  "keywords": ["openshift", "kubernetes", "mqtt"],
   "author": "gautric@redhat.com",
-  "license": "ISC",
+  "license": "Apache v2",
   "dependencies": {
-    "node-red": "^0.18.4"
+    "node-red": "^0.18.4",
+    "node-red-contrib-amqp": "^0.4.5",
+    "node-red-dashboard": "^2.9.0"
   }
 }

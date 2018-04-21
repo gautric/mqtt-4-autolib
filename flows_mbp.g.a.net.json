@@ -78,8 +78,8 @@
       }
     },
     "site": {
-      "name": "Node-RED Dashboard",
-      "hideToolbar": "false",
+      "name": "Node-RED",
+      "hideToolbar": "true",
       "allowSwipe": "false",
       "dateFormat": "DD/MM/YYYY",
       "sizes": {
@@ -91,7 +91,8 @@
         "cy": 6,
         "px": 0,
         "py": 0
-      }
+      },
+      "allowTempTheme": "false"
     }
   },
   {
