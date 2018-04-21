@@ -1,5 +1,5 @@
 {
-  "name": "nodered-ocp",
+  "name": "mqtt-4-autolib",
   "version": "1.0.0",
   "description": "",
   "main": "flow_mbp.g.a.net.json",
@@ -7,7 +7,11 @@
     "start": "node-red --settings settings.js flows_mbp.g.a.net.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["openshift", "kubernetes", "mqtt"],
+  "keywords": [
+    "openshift",
+    "kubernetes",
+    "mqtt"
+  ],
   "author": "gautric@redhat.com",
   "license": "ISC",
   "dependencies": {
