@@ -1,12 +1,10 @@
-[
-  {
+[{
     "id": "autolib.flow",
     "type": "tab",
     "label": "Autolib v2",
     "disabled": false,
     "info": ""
-  },
-  {
+}, {
     "id": "ab63dab7.3be17",
     "type": "mqtt-broker",
     "z": "",
@@ -25,91 +23,109 @@
     "birthTopic": "",
     "birthQos": "0",
     "birthPayload": ""
-  },
-  {
+}, {
     "id": "9b11503e.2b81a8",
     "type": "ui_base",
     "theme": {
-      "name": "theme-light",
-      "lightTheme": {
-        "default": "#0094CE",
-        "baseColor": "#0094CE",
-        "baseFont":
-          "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-        "edited": true,
-        "reset": false
-      },
-      "darkTheme": {
-        "default": "#097479",
-        "baseColor": "#097479",
-        "baseFont":
-          "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-        "edited": false
-      },
-      "customTheme": {
-        "name": "Untitled Theme 1",
-        "default": "#4B7930",
-        "baseColor": "#4B7930",
-        "baseFont":
-          "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-      },
-      "themeState": {
-        "base-color": {
-          "default": "#0094CE",
-          "value": "#0094CE",
-          "edited": false
+        "name": "theme-light",
+        "lightTheme": {
+            "default": "#0094CE",
+            "baseColor": "#0094CE",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+            "edited": true,
+            "reset": false
         },
-        "page-titlebar-backgroundColor": {
-          "value": "#0094CE",
-          "edited": false
+        "darkTheme": {
+            "default": "#097479",
+            "baseColor": "#097479",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+            "edited": false
         },
-        "page-backgroundColor": { "value": "#fafafa", "edited": false },
-        "page-sidebar-backgroundColor": { "value": "#ffffff", "edited": false },
-        "group-textColor": { "value": "#1bbfff", "edited": false },
-        "group-borderColor": { "value": "#ffffff", "edited": false },
-        "group-backgroundColor": { "value": "#ffffff", "edited": false },
-        "widget-textColor": { "value": "#111111", "edited": false },
-        "widget-backgroundColor": { "value": "#0094ce", "edited": false },
-        "widget-borderColor": { "value": "#ffffff", "edited": false },
-        "base-font": {
-          "value":
-            "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        "customTheme": {
+            "name": "Untitled Theme 1",
+            "default": "#4B7930",
+            "baseColor": "#4B7930",
+            "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        },
+        "themeState": {
+            "base-color": {
+                "default": "#0094CE",
+                "value": "#0094CE",
+                "edited": false
+            },
+            "page-titlebar-backgroundColor": {
+                "value": "#0094CE",
+                "edited": false
+            },
+            "page-backgroundColor": {
+                "value": "#fafafa",
+                "edited": false
+            },
+            "page-sidebar-backgroundColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "group-textColor": {
+                "value": "#1bbfff",
+                "edited": false
+            },
+            "group-borderColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "group-backgroundColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "widget-textColor": {
+                "value": "#111111",
+                "edited": false
+            },
+            "widget-backgroundColor": {
+                "value": "#0094ce",
+                "edited": false
+            },
+            "widget-borderColor": {
+                "value": "#ffffff",
+                "edited": false
+            },
+            "base-font": {
+                "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            }
         }
-      }
     },
     "site": {
-      "name": "Node-RED",
-      "hideToolbar": "true",
-      "allowSwipe": "false",
-      "dateFormat": "DD/MM/YYYY",
-      "sizes": {
-        "sx": 48,
-        "sy": 48,
-        "gx": 6,
-        "gy": 6,
-        "cx": 6,
-        "cy": 6,
-        "px": 0,
-        "py": 0
-      },
-      "allowTempTheme": "false"
+        "name": "Node-RED",
+        "hideToolbar": "true",
+        "allowSwipe": "false",
+        "dateFormat": "DD/MM/YYYY",
+        "sizes": {
+            "sx": 48,
+            "sy": 48,
+            "gx": 6,
+            "gy": 6,
+            "cx": 6,
+            "cy": 6,
+            "px": 0,
+            "py": 0
+        },
+        "allowTempTheme": "false"
     }
-  },
-  {
+}, {
     "id": "b284a013.96c588",
     "type": "http request",
     "z": "autolib.flow",
     "name": "Call Paris API",
     "method": "GET",
     "ret": "obj",
-    "url":
-      "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}",
+    "url": "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}",
     "tls": "",
     "x": 240,
     "y": 240,
-    "wires": [["3cc40e5e.e5958a"]]
-  },
-  {
+    "wires": [
+        ["3cc40e5e.e5958a"]
+    ]
+}, {
     "id": "38c76607.37ff5a",
     "type": "inject",
     "z": "autolib.flow",
@@ -123,9 +139,10 @@
     "onceDelay": 0.1,
     "x": 170,
     "y": 80,
-    "wires": [["d1f2a62c.45dad"]]
-  },
-  {
+    "wires": [
+        ["d1f2a62c.45dad"]
+    ]
+}, {
     "id": "7e1519a4.9e1e28",
     "type": "rbe",
     "z": "autolib.flow",
@@ -137,37 +154,43 @@
     "property": "payload",
     "x": 290,
     "y": 400,
-    "wires": [["f5c54290.81a7b", "6a29e7f5.9c18d8"]]
-  },
-  {
+    "wires": [
+        ["f5c54290.81a7b", "6a29e7f5.9c18d8"]
+    ]
+}, {
     "id": "f5c54290.81a7b",
     "type": "function",
     "z": "autolib.flow",
     "name": "lastCall",
-    "func":
-      "\nvar date = new Date(msg.headers.date);\nmsg.payload = date.toLocaleTimeString();\nmsg.topic = '/autolib/_lastCall';\n\nreturn msg;",
+    "func": "\nvar date = new Date(msg.headers.date);\nmsg.payload = date.toLocaleTimeString();\nmsg.topic = 'autolib/_lastCall';\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 660,
     "y": 360,
-    "wires": [["3be03c89.6896fc"]]
-  },
-  {
+    "wires": [
+        ["3be03c89.6896fc"]
+    ]
+}, {
     "id": "3cc40e5e.e5958a",
     "type": "switch",
     "z": "autolib.flow",
     "name": "if no Error",
     "property": "statusCode",
     "propertyType": "msg",
-    "rules": [{ "t": "eq", "v": "200", "vt": "num" }],
+    "rules": [{
+        "t": "eq",
+        "v": "200",
+        "vt": "num"
+    }],
     "checkall": "true",
     "repair": false,
     "outputs": 1,
     "x": 240,
     "y": 320,
-    "wires": [["7e1519a4.9e1e28"]]
-  },
-  {
+    "wires": [
+        ["7e1519a4.9e1e28"]
+    ]
+}, {
     "id": "6bf3d1b3.5cfe18",
     "type": "split",
     "z": "autolib.flow",
@@ -180,9 +203,10 @@
     "addname": "",
     "x": 650,
     "y": 440,
-    "wires": [["669ecd31.2958fc"]]
-  },
-  {
+    "wires": [
+        ["669ecd31.2958fc"]
+    ]
+}, {
     "id": "3be03c89.6896fc",
     "type": "mqtt out",
     "z": "autolib.flow",
@@ -194,34 +218,31 @@
     "x": 1080,
     "y": 400,
     "wires": []
-  },
-  {
+}, {
     "id": "669ecd31.2958fc",
     "type": "function",
     "z": "autolib.flow",
     "name": "generateDynamicTopic",
-    "func":
-      "\nmsg.topic = \"/autolib/\"+msg.payload.fields.id.replace(/-/g, '/');\n\nreturn msg;",
+    "func": "\nmsg.topic = \"autolib/\"+msg.payload.fields.id.replace(/-/g, '/');\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 840,
     "y": 440,
-    "wires": [["3be03c89.6896fc", "d604353e.446b2"]]
-  },
-  {
+    "wires": [
+        ["3be03c89.6896fc", "d604353e.446b2"]
+    ]
+}, {
     "id": "6a29e7f5.9c18d8",
     "type": "change",
     "z": "autolib.flow",
     "name": "extractRecords",
-    "rules": [
-      {
+    "rules": [{
         "t": "move",
         "p": "payload.records",
         "pt": "msg",
         "to": "payload",
         "tot": "msg"
-      }
-    ],
+    }],
     "action": "",
     "property": "",
     "from": "",
@@ -229,9 +250,10 @@
     "reg": false,
     "x": 480,
     "y": 440,
-    "wires": [["6bf3d1b3.5cfe18"]]
-  },
-  {
+    "wires": [
+        ["6bf3d1b3.5cfe18"]
+    ]
+}, {
     "id": "d604353e.446b2",
     "type": "debug",
     "z": "autolib.flow",
@@ -244,18 +266,17 @@
     "x": 1060,
     "y": 480,
     "wires": []
-  },
-  {
+}, {
     "id": "d1f2a62c.45dad",
     "type": "function",
     "z": "autolib.flow",
     "name": "retrieveAutolibStation",
-    "func":
-      "\nstations = global.get('autolibStation');\nnode.log(global.get('autolibStation'));\nmsg.topic = stations.replace(/,/g,' OR ');\n\nreturn msg;",
+    "func": "\nstations = global.get('autolibStation');\nnode.log(global.get('autolibStation'));\nmsg.topic = stations.replace(/,/g,' OR ');\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "x": 220,
     "y": 160,
-    "wires": [["b284a013.96c588"]]
-  }
-]
+    "wires": [
+        ["b284a013.96c588"]
+    ]
+}]
