@@ -9,7 +9,7 @@
     "type": "mqtt-broker",
     "z": "",
     "name": "broker",
-    "broker": "broker",
+    "broker": "$(BROKER_HOSTNAME)",
     "port": "1883",
     "tls": "",
     "clientid": "",
