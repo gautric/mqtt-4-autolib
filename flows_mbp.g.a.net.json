@@ -103,10 +103,10 @@
     "method": "GET",
     "ret": "obj",
     "url":
-      "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}",
+      "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}&rows={{{rows}}}",
     "tls": "",
-    "x": 600,
-    "y": 280,
+    "x": 700,
+    "y": 360,
     "wires": [["3cc40e5e.e5958a"]]
   },
   {
@@ -135,8 +135,8 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 930,
-    "y": 360,
+    "x": 1030,
+    "y": 440,
     "wires": [["f5c54290.81a7b", "6a29e7f5.9c18d8"]]
   },
   {
@@ -148,8 +148,8 @@
       "\nvar date = new Date(msg.headers.date);\nmsg.payload = date.toLocaleTimeString();\nmsg.topic = 'autolib/_lastCall';\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 1300,
-    "y": 320,
+    "x": 1400,
+    "y": 400,
     "wires": [["3be03c89.6896fc"]]
   },
   {
@@ -163,8 +163,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 780,
-    "y": 320,
+    "x": 880,
+    "y": 400,
     "wires": [["7e1519a4.9e1e28"]]
   },
   {
@@ -178,8 +178,8 @@
     "arraySpltType": "len",
     "stream": false,
     "addname": "",
-    "x": 1290,
-    "y": 400,
+    "x": 1390,
+    "y": 480,
     "wires": [["669ecd31.2958fc"]]
   },
   {
@@ -191,8 +191,8 @@
     "qos": "1",
     "retain": "true",
     "broker": "ab63dab7.3be17",
-    "x": 1720,
-    "y": 360,
+    "x": 1820,
+    "y": 440,
     "wires": []
   },
   {
@@ -204,8 +204,8 @@
       "\nmsg.topic = \"autolib/\"+msg.payload.fields.id.replace(/-/g, '/');\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 1480,
-    "y": 400,
+    "x": 1580,
+    "y": 480,
     "wires": [["3be03c89.6896fc", "d604353e.446b2"]]
   },
   {
@@ -227,8 +227,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1120,
-    "y": 400,
+    "x": 1220,
+    "y": 480,
     "wires": [["6bf3d1b3.5cfe18"]]
   },
   {
@@ -241,8 +241,8 @@
     "console": true,
     "tostatus": false,
     "complete": "true",
-    "x": 1700,
-    "y": 440,
+    "x": 1800,
+    "y": 520,
     "wires": []
   },
   {
@@ -258,7 +258,7 @@
     "output": "str",
     "x": 380,
     "y": 160,
-    "wires": [["70a447f1.47338", "913f972b.daecc8"]]
+    "wires": [["913f972b.daecc8", "ce957ebf.2932c"]]
   },
   {
     "id": "70a447f1.47338",
@@ -281,8 +281,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 390,
-    "y": 240,
+    "x": 530,
+    "y": 300,
     "wires": [["b284a013.96c588"]]
   },
   {
@@ -298,5 +298,17 @@
     "x": 610,
     "y": 140,
     "wires": []
+  },
+  {
+    "id": "ce957ebf.2932c",
+    "type": "function",
+    "z": "autolib.flow",
+    "name": "calculStationNumber",
+    "func": "\nmsg.rows=msg.topic.split(\",\").length\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 480,
+    "y": 220,
+    "wires": [["70a447f1.47338"]]
   }
 ]
