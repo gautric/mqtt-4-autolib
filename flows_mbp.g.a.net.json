@@ -2,7 +2,7 @@
   {
     "id": "autolib.flow",
     "type": "tab",
-    "label": "Autolib v2",
+    "label": "Autolib v3",
     "disabled": false,
     "info": ""
   },
@@ -103,10 +103,10 @@
     "method": "GET",
     "ret": "obj",
     "url":
-      "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}&rows={{{rows}}}",
+      "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{q}}}&rows={{{rows}}}",
     "tls": "",
-    "x": 700,
-    "y": 360,
+    "x": 800,
+    "y": 380,
     "wires": [["3cc40e5e.e5958a"]]
   },
   {
@@ -135,8 +135,8 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 1030,
-    "y": 440,
+    "x": 1130,
+    "y": 460,
     "wires": [["f5c54290.81a7b", "6a29e7f5.9c18d8"]]
   },
   {
@@ -148,8 +148,8 @@
       "\nvar date = new Date(msg.headers.date);\nmsg.payload = date.toLocaleTimeString();\nmsg.topic = 'autolib/_lastCall';\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 1400,
-    "y": 400,
+    "x": 1500,
+    "y": 420,
     "wires": [["3be03c89.6896fc"]]
   },
   {
@@ -163,8 +163,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 880,
-    "y": 400,
+    "x": 980,
+    "y": 420,
     "wires": [["7e1519a4.9e1e28"]]
   },
   {
@@ -178,8 +178,8 @@
     "arraySpltType": "len",
     "stream": false,
     "addname": "",
-    "x": 1390,
-    "y": 480,
+    "x": 1490,
+    "y": 500,
     "wires": [["669ecd31.2958fc"]]
   },
   {
@@ -191,8 +191,8 @@
     "qos": "1",
     "retain": "true",
     "broker": "ab63dab7.3be17",
-    "x": 1820,
-    "y": 440,
+    "x": 1920,
+    "y": 460,
     "wires": []
   },
   {
@@ -204,8 +204,8 @@
       "\nmsg.topic = \"autolib/\"+msg.payload.fields.id.replace(/-/g, '/');\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 1580,
-    "y": 480,
+    "x": 1680,
+    "y": 500,
     "wires": [["3be03c89.6896fc", "d604353e.446b2"]]
   },
   {
@@ -227,8 +227,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1220,
-    "y": 480,
+    "x": 1320,
+    "y": 500,
     "wires": [["6bf3d1b3.5cfe18"]]
   },
   {
@@ -241,8 +241,8 @@
     "console": true,
     "tostatus": false,
     "complete": "true",
-    "x": 1800,
-    "y": 520,
+    "x": 1900,
+    "y": 540,
     "wires": []
   },
   {
@@ -250,7 +250,7 @@
     "type": "template",
     "z": "autolib.flow",
     "name": "retrieveAutolibStation",
-    "field": "topic",
+    "field": "q",
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "plain",
@@ -268,7 +268,7 @@
     "rules": [
       {
         "t": "change",
-        "p": "topic",
+        "p": "q",
         "pt": "msg",
         "from": ",",
         "fromt": "str",
@@ -281,21 +281,21 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 530,
-    "y": 300,
+    "x": 620,
+    "y": 320,
     "wires": [["b284a013.96c588"]]
   },
   {
     "id": "913f972b.daecc8",
     "type": "debug",
     "z": "autolib.flow",
-    "name": "",
+    "name": "debugStationList",
     "active": true,
     "tosidebar": false,
     "console": true,
     "tostatus": false,
-    "complete": "topic",
-    "x": 610,
+    "complete": "q",
+    "x": 630,
     "y": 140,
     "wires": []
   },
@@ -304,11 +304,11 @@
     "type": "function",
     "z": "autolib.flow",
     "name": "calculStationNumber",
-    "func": "\nmsg.rows=msg.topic.split(\",\").length\n\nreturn msg;",
+    "func": "\nmsg.rows=msg.q.split(\",\").length\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 480,
-    "y": 220,
+    "x": 500,
+    "y": 240,
     "wires": [["70a447f1.47338"]]
   }
 ]
