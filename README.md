@@ -1,16 +1,22 @@
 # MQTT 4 Autolib
 
+Flow Node-Red pour Streamer l'api Autolib Paris.
 
-##
+##  Build
+
+....
+npm install
+....
+
+## Run
+
+....
+npm start
+....
 
 
 ## Configuration
 
-You can select witch station you want follow.
+Variable d'environment :
 
-
-by default AUTOLIB_STATION
-
-
-
-##  
+AUTOLIB_STATION=<list des stations>
