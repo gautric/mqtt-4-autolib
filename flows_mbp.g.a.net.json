@@ -63,38 +63,14 @@
           "value": "#0094CE",
           "edited": false
         },
-        "page-backgroundColor": {
-          "value": "#fafafa",
-          "edited": false
-        },
-        "page-sidebar-backgroundColor": {
-          "value": "#ffffff",
-          "edited": false
-        },
-        "group-textColor": {
-          "value": "#1bbfff",
-          "edited": false
-        },
-        "group-borderColor": {
-          "value": "#ffffff",
-          "edited": false
-        },
-        "group-backgroundColor": {
-          "value": "#ffffff",
-          "edited": false
-        },
-        "widget-textColor": {
-          "value": "#111111",
-          "edited": false
-        },
-        "widget-backgroundColor": {
-          "value": "#0094ce",
-          "edited": false
-        },
-        "widget-borderColor": {
-          "value": "#ffffff",
-          "edited": false
-        },
+        "page-backgroundColor": { "value": "#fafafa", "edited": false },
+        "page-sidebar-backgroundColor": { "value": "#ffffff", "edited": false },
+        "group-textColor": { "value": "#1bbfff", "edited": false },
+        "group-borderColor": { "value": "#ffffff", "edited": false },
+        "group-backgroundColor": { "value": "#ffffff", "edited": false },
+        "widget-textColor": { "value": "#111111", "edited": false },
+        "widget-backgroundColor": { "value": "#0094ce", "edited": false },
+        "widget-borderColor": { "value": "#ffffff", "edited": false },
         "base-font": {
           "value":
             "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
@@ -129,8 +105,8 @@
     "url":
       "https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&q={{{topic}}}",
     "tls": "",
-    "x": 240,
-    "y": 240,
+    "x": 600,
+    "y": 280,
     "wires": [["3cc40e5e.e5958a"]]
   },
   {
@@ -146,7 +122,7 @@
     "once": false,
     "onceDelay": 0.1,
     "x": 170,
-    "y": 80,
+    "y": 100,
     "wires": [["1b38781e.51de1"]]
   },
   {
@@ -159,8 +135,8 @@
     "start": "",
     "inout": "out",
     "property": "payload",
-    "x": 290,
-    "y": 400,
+    "x": 930,
+    "y": 360,
     "wires": [["f5c54290.81a7b", "6a29e7f5.9c18d8"]]
   },
   {
@@ -172,8 +148,8 @@
       "\nvar date = new Date(msg.headers.date);\nmsg.payload = date.toLocaleTimeString();\nmsg.topic = 'autolib/_lastCall';\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 660,
-    "y": 360,
+    "x": 1300,
+    "y": 320,
     "wires": [["3be03c89.6896fc"]]
   },
   {
@@ -183,17 +159,11 @@
     "name": "if no Error",
     "property": "statusCode",
     "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "200",
-        "vt": "num"
-      }
-    ],
+    "rules": [{ "t": "eq", "v": "200", "vt": "num" }],
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 240,
+    "x": 780,
     "y": 320,
     "wires": [["7e1519a4.9e1e28"]]
   },
@@ -208,8 +178,8 @@
     "arraySpltType": "len",
     "stream": false,
     "addname": "",
-    "x": 650,
-    "y": 440,
+    "x": 1290,
+    "y": 400,
     "wires": [["669ecd31.2958fc"]]
   },
   {
@@ -221,8 +191,8 @@
     "qos": "1",
     "retain": "true",
     "broker": "ab63dab7.3be17",
-    "x": 1080,
-    "y": 400,
+    "x": 1720,
+    "y": 360,
     "wires": []
   },
   {
@@ -234,8 +204,8 @@
       "\nmsg.topic = \"autolib/\"+msg.payload.fields.id.replace(/-/g, '/');\n\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
-    "x": 840,
-    "y": 440,
+    "x": 1480,
+    "y": 400,
     "wires": [["3be03c89.6896fc", "d604353e.446b2"]]
   },
   {
@@ -257,8 +227,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 480,
-    "y": 440,
+    "x": 1120,
+    "y": 400,
     "wires": [["6bf3d1b3.5cfe18"]]
   },
   {
@@ -267,12 +237,12 @@
     "z": "autolib.flow",
     "name": "debug",
     "active": true,
-    "tosidebar": true,
+    "tosidebar": false,
     "console": true,
     "tostatus": false,
     "complete": "true",
-    "x": 1060,
-    "y": 480,
+    "x": 1700,
+    "y": 440,
     "wires": []
   },
   {
@@ -286,9 +256,9 @@
     "syntax": "plain",
     "template": "$(AUTOLIB_STATION)",
     "output": "str",
-    "x": 220,
-    "y": 120,
-    "wires": [["70a447f1.47338"]]
+    "x": 380,
+    "y": 160,
+    "wires": [["70a447f1.47338", "913f972b.daecc8"]]
   },
   {
     "id": "70a447f1.47338",
@@ -311,8 +281,22 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 230,
-    "y": 180,
+    "x": 390,
+    "y": 240,
     "wires": [["b284a013.96c588"]]
+  },
+  {
+    "id": "913f972b.daecc8",
+    "type": "debug",
+    "z": "autolib.flow",
+    "name": "",
+    "active": true,
+    "tosidebar": false,
+    "console": true,
+    "tostatus": false,
+    "complete": "topic",
+    "x": 610,
+    "y": 140,
+    "wires": []
   }
 ]
